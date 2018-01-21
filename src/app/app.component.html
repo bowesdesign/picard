@@ -1,6 +1,2 @@
 <h1>Captain's Log</h1>
-<ul>
-  <li class="text" *ngFor="let item of items | async">
-    {{item.timestamp}}: {{item.text}}
-  </li>
-</ul>
+<log [updates]="items"></log>

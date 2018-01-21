@@ -7,11 +7,13 @@ import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment';
 import { AngularFireDatabaseModule, AngularFireDatabaseProvider } from 'angularfire2/database';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { LogComponent } from './log/log.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LogComponent
   ],
   imports: [
     BrowserModule,
