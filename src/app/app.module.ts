@@ -8,6 +8,27 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { LogComponent } from './components/log/log.component';
 import { UpdateFormComponent } from './components/update-form/update-form.component';
 
+import { RouterModule, Routes } from '@angular/router';
+
+
+const appRoutes: Routes = [
+  {
+    path: 'log',
+    component: LogComponent,
+    data: {title: 'Log'}
+  },
+  {
+    path: 'new-update',
+    component: UpdateFormComponent,
+    data: {title: 'New Update'}
+  },
+  {
+    path: '',
+    redirectTo: '/log',
+    pathMatch: 'full'
+  },
+  // { path: '**', component: PageNotFoundComponent }
+];
 
 @NgModule({
   declarations: [
@@ -18,7 +39,10 @@ import { UpdateFormComponent } from './components/update-form/update-form.compon
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase, 'Picard'),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    RouterModule.forRoot(
+      appRoutes
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]

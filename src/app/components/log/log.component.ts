@@ -1,22 +1,25 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Update } from '../../models/update';
+import { AngularFirestore } from 'angularfire2/firestore';
 
 @Component({
   selector: 'log',
   templateUrl: './log.component.html',
   styleUrls: ['./log.component.css']
 })
-export class LogComponent implements OnInit {
-  @Input() updates: any[];
+export class LogComponent {
+  updates: Update[];
 
-  constructor() {
+  constructor(db: AngularFirestore) {
+    db.collection('updates')
+      .valueChanges()
+      .subscribe((updateList: Update[]) => {
+        this.updates = this.sortByTimestamp(updateList);
+      });
   }
 
-  ngOnInit() {
-  }
-
-  sortedUpdates() {
-    const sortedUpdates = this.updates || [];
+  sortByTimestamp(updates: Update[]) {
+    const sortedUpdates = updates || [];
     sortedUpdates.sort((a, b) => a.timestamp - b.timestamp).reverse();
     return sortedUpdates;
   }

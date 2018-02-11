@@ -9,11 +9,4 @@ import { Observable } from 'rxjs/Observable';
 })
 
 export class AppComponent {
-  public items: any[];
-
-  constructor(db: AngularFirestore) {
-    db.collection('updates').valueChanges().subscribe((val) => {
-      this.items = val;
-    });
-  }
 }
