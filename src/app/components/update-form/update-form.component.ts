@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from 'angularfire2/firestore';
-import { Update } from '../models/update';
+import { Update } from '../../models/update';
 
 @Component({
   selector: 'update-form',

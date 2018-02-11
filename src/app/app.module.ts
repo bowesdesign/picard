@@ -5,8 +5,8 @@ import { AppComponent } from './app.component';
 import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
-import { LogComponent } from './log/log.component';
-import { UpdateFormComponent } from './update-form/update-form.component';
+import { LogComponent } from './components/log/log.component';
+import { UpdateFormComponent } from './components/update-form/update-form.component';
 
 
 @NgModule({
