@@ -1,2 +1,4 @@
-<input (keyup)="onKey($event)">
-<button (click)="onPostClicked()">Post to DB</button>
+<form>
+  <textarea (keyup)="onKey($event)"></textarea>
+  <input type="submit" (click)="onPostClicked()" routerLink="/log" value="Add Update"/>
+</form>

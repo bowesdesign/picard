@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Update } from '../../models/update';
 import { AngularFirestore } from 'angularfire2/firestore';
 
