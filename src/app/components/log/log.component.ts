@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
+import { Update } from '../../models/update';
 
 @Component({
   selector: 'log',
@@ -9,9 +9,15 @@ import { Observable } from 'rxjs/Observable';
 export class LogComponent implements OnInit {
   @Input() updates: any[];
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
 
+  sortedUpdates() {
+    const sortedUpdates = this.updates || [];
+    sortedUpdates.sort((a, b) => a.timestamp - b.timestamp).reverse();
+    return sortedUpdates;
+  }
 }

@@ -1,5 +1,5 @@
 <ul>
-  <li class="text" *ngFor="let update of updates">
+  <li class="text" *ngFor="let update of sortedUpdates()">
     {{update.timestamp}}: {{update.text}}
   </li>
 </ul>
