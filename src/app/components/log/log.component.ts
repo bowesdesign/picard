@@ -5,7 +5,7 @@ import { AngularFirestore } from 'angularfire2/firestore';
 @Component({
   selector: 'log',
   templateUrl: './log.component.html',
-  styleUrls: ['./log.component.css']
+  styleUrls: ['./log.component.scss']
 })
 export class LogComponent {
   updates: Update[];

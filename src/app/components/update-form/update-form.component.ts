@@ -5,7 +5,7 @@ import { Update } from '../../models/update';
 @Component({
   selector: 'update-form',
   templateUrl: './update-form.component.html',
-  styleUrls: ['./update-form.component.css']
+  styleUrls: ['./update-form.component.scss']
 })
 export class UpdateFormComponent {
   private inputText = '';
