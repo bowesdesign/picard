@@ -1,14 +1,14 @@
 <button class="log__create-update-btn" mat-fab color="accent" routerLink="/new-update">
   <i class="material-icons">add</i>
 </button>
-<div *ngFor="let update of updates">
-  <div>
+<div class="update__item" *ngFor="let update of updates">
+  <div class="update__header" *ngIf="update.title">
     {{update.title}}
   </div>
-  <div>
+  <div class="update__body" *ngIf="update.text">
     {{update.text}}
   </div>
-  <div>
-    {{update.timestamp}}
+  <div class="update__timestamp" *ngIf="update.timestamp">
+    {{update.timestamp | date:"dd MMM yyyy" | uppercase}}
   </div>
 </div>

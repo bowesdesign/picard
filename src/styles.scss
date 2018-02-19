@@ -1,12 +1,18 @@
 @import "styles/imports";
 
-body {
-  font-family: $font-stack-helvetica;
+body, #{$all-text-inputs} {
+  font-family: $primary-font;
+  font-weight: $font-weight-regular;
+  font-size: $font-size-regular;
+  color: mat-color(map-get($picard-app-theme, primary));
   padding: 0;
   margin: 0;
 }
 
 #{$all-text-inputs} {
-  border: 1px solid #ccc;
+  border: none;
   display: block;
+  background-color: #fefefe;
+  @include padding($spacing-xs 0);
+  @include size(100%, auto)
 }

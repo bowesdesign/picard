@@ -2,4 +2,33 @@
 
 .log__create-update-btn {
   @include position(fixed, null 2rem 2rem null)
+  z-index: 3;
+}
+
+.update__item {
+  div + div {
+    margin-top: $spacing-xs;
+  }
+
+  .update__header {
+    font-weight: $font-weight-light;
+    font-size: $font-size-large;
+  }
+
+  .update__body {
+    // enable the ellipsis feature once we have a way to view all the information
+    //display: -webkit-box;
+    //-webkit-line-clamp: 3;
+    //-webkit-box-orient: vertical;
+    //overflow: hidden;
+  }
+
+  .update__timestamp {
+    font-size: $font-size-small;
+    opacity: 0.40;
+  }
+}
+
+.update__item + .update__item {
+  margin-top: $spacing-lg;
 }

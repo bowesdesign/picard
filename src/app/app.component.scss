@@ -8,9 +8,15 @@
     position: fixed;
     @include size(100%, auto);
     z-index: 2;
+
+    span {
+      font-family: $primary-font;
+      font-weight: $font-weight-light;
+      font-size: $font-size-large;
+    }
   }
 
   #app-content {
-    padding-top: 80px;
+    @include padding($spacing-xl $spacing-sm $spacing-lg $spacing-sm);
   }
 }

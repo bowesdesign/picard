@@ -4,6 +4,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
+import { MatInputModule } from '@angular/material/input';
+
 
 // external libraries
 import { AngularFireModule } from 'angularfire2';
@@ -46,6 +48,7 @@ const appRoutes: Routes = [
     BrowserModule,
     MatToolbarModule,
     MatButtonModule,
+    MatInputModule,
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase, 'Picard'),
     AngularFirestoreModule,
