@@ -1,4 +1,5 @@
 <form>
-  <textarea (keyup)="onKey($event)"></textarea>
+  <input (keyup)="onTitleKey($event)"/>
+  <textarea (keyup)="onTextKey($event)"></textarea>
   <input type="submit" (click)="onPostClicked()" routerLink="/log" value="Add Update"/>
 </form>
