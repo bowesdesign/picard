@@ -1,0 +1,16 @@
+@import "../styles/imports";
+
+#app-container {
+  display: flex;
+  flex-direction: column;
+
+  #toolbar {
+    position: fixed;
+    @include size(100%, auto);
+    z-index: 2;
+  }
+
+  #app-content {
+    padding-top: 64px;
+  }
+}

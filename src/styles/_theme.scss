@@ -1,0 +1,8 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+$picard-app-primary: mat-palette($mat-deep-purple);
+$picard-app-accent:  mat-palette($mat-orange, A200, A100, A400);
+$picard-app-warn:    mat-palette($mat-red);
+$picard-app-theme: mat-light-theme($picard-app-primary, $picard-app-accent, $picard-app-warn);
+@include angular-material-theme($picard-app-theme);
