@@ -1,6 +1,7 @@
 // angular dependencies
 import { BrowserModule } from '@angular/platform-browser';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 
@@ -13,6 +14,7 @@ import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
 import { LogComponent } from './components/log/log.component';
 import { UpdateFormComponent } from './components/update-form/update-form.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 const appRoutes: Routes = [
@@ -43,6 +45,8 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     MatToolbarModule,
+    MatButtonModule,
+    BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase, 'Picard'),
     AngularFirestoreModule,
     RouterModule.forRoot(

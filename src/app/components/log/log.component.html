@@ -1,4 +1,6 @@
-<button routerLink="/new-update">New Log Update</button>
+<button class="log__create-update-btn" mat-fab color="accent" routerLink="/new-update">
+  <i class="material-icons">add</i>
+</button>
 <div *ngFor="let update of updates">
   <div>
     {{update.title}}

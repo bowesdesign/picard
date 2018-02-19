@@ -1,8 +1,43 @@
 @import '~@angular/material/theming';
 @include mat-core();
 
-$picard-app-primary: mat-palette($mat-deep-purple);
+$mat-picard-primary: (
+  50 : #eae9ea,
+  100 : #cac7cb,
+  200 : #a7a2a9,
+  300 : #837c86,
+  400 : #69606c,
+  500 : #4e4452,
+  600 : #473e4b,
+  700 : #3d3541,
+  800 : #352d38,
+  900 : #251f28,
+  A100 : #ca72ff,
+  A200 : #b73fff,
+  A400 : #a40cff,
+  A700 : #9700f1,
+  contrast: (
+    50 : $dark-primary-text,
+    100 : $dark-primary-text,
+    200 : $dark-primary-text,
+    300 : $light-primary-text,
+    400 : $light-primary-text,
+    500 : $light-primary-text,
+    600 : $light-primary-text,
+    700 : $light-primary-text,
+    800 : $light-primary-text,
+    900 : $light-primary-text,
+    A100 : $dark-primary-text,
+    A200 : $light-primary-text,
+    A400 : $light-primary-text,
+    A700 : $light-primary-text,
+  )
+);
+
+
+$picard-app-primary: mat-palette($mat-picard-primary);
 $picard-app-accent:  mat-palette($mat-orange, A200, A100, A400);
 $picard-app-warn:    mat-palette($mat-red);
 $picard-app-theme: mat-light-theme($picard-app-primary, $picard-app-accent, $picard-app-warn);
+
 @include angular-material-theme($picard-app-theme);
