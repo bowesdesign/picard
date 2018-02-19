@@ -8,8 +8,8 @@ import { Update } from '../../models/update';
   styleUrls: ['./update-form.component.css']
 })
 export class UpdateFormComponent {
-  private inputText: string;
-  private inputTitle: string;
+  private inputText = '';
+  private inputTitle = '';
 
   constructor(private afs: AngularFirestore) {
   }
