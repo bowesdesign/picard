@@ -1,11 +1,5 @@
 @import "../../../styles/imports";
 
-.update-form__title {
-  margin-bottom: $spacing-xs;
-  font-size: $font-size-large;
-  font-weight: $font-weight-light;
-}
-
 .update-form__text {
   resize: none;
 }
@@ -16,5 +10,13 @@
   }
 }
 
-button {
+.update-form__header {
+  display: flex;
+  align-items: center;
+
+  .update-form__title {
+    margin-right: $spacing-xs;
+    font-size: $font-size-large;
+    font-weight: $font-weight-light;
+  }
 }

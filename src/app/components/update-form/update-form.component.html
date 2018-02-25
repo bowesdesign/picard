@@ -1,6 +1,12 @@
-<input class="update-form__title"
-       (keyup)="onTitleKey($event)"
-       placeholder="Title"/>
+<div class="update-form__header">
+  <input class="update-form__title"
+         (keyup)="onTitleKey($event)"
+         placeholder="Title"/>
+
+  <button class="update-form__camera" mat-icon-button color="primary">
+    <i class="material-icons">camera_alt</i>
+  </button>
+</div>
 
 <textarea matInput matTextareaAutosize matAutosizeMinRows="6"
           class="update-form__text"
