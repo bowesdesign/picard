@@ -20,3 +20,12 @@
     font-weight: $font-weight-light;
   }
 }
+
+input[type="file"] {
+  display: none;
+}
+
+.update-form__image {
+  max-width: 100%;
+  max-height: $spacing-xl;
+}

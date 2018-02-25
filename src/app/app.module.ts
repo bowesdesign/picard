@@ -17,6 +17,7 @@ import { environment } from '../environments/environment';
 import { LogComponent } from './components/log/log.component';
 import { UpdateFormComponent } from './components/update-form/update-form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AngularFireStorageModule } from 'angularfire2/storage';
 
 
 const appRoutes: Routes = [
@@ -52,6 +53,7 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase, 'Picard'),
     AngularFirestoreModule,
+    AngularFireStorageModule,
     RouterModule.forRoot(
       appRoutes
     )
