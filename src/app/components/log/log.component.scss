@@ -1,7 +1,7 @@
 @import "../../../styles/imports";
 
 .log__create-update-btn {
-  @include position(fixed, null 2rem 2rem null)
+  @include position(fixed, null 2rem 2rem null);
   z-index: 3;
 }
 

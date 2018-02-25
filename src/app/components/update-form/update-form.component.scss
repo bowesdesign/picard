@@ -2,6 +2,7 @@
 
 .update-form__text {
   resize: none;
+  padding: 0;
 }
 
 .update-form__title, .update-form__text {
@@ -12,12 +13,16 @@
 
 .update-form__header {
   display: flex;
-  align-items: center;
 
   .update-form__title {
-    margin-right: $spacing-xs;
+    margin-right: $spacing-sm;
     font-size: $font-size-large;
     font-weight: $font-weight-light;
+    resize: none;
+  }
+
+  .material-icons {
+    margin-top: 1.2rem;
   }
 }
 
@@ -27,5 +32,5 @@ input[type="file"] {
 
 .update-form__image {
   max-width: 100%;
-  max-height: $spacing-xl;
+  max-height: auto;
 }
