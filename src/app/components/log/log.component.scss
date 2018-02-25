@@ -10,6 +10,11 @@
     margin-top: $spacing-xs;
   }
 
+  .update__images img {
+    max-width: 100%;
+    height: auto;
+  }
+
   .update__header {
     font-weight: $font-weight-light;
     font-size: $font-size-large;

@@ -2,6 +2,11 @@
   <i class="material-icons">add</i>
 </button>
 <div class="update__item" *ngFor="let update of updates">
+  <div class="update__images" *ngIf="update.images">
+    <a href="{{update.images}}">
+      <img src="{{update.images}}">
+    </a>
+  </div>
   <div class="update__header" *ngIf="update.title">
     {{update.title}}
   </div>

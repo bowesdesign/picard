@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { AngularFireStorage, AngularFireStorageReference } from 'angularfire2/storage';
 import { Update } from '../../models/update';
-import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'update-form',
@@ -15,7 +14,7 @@ export class UpdateFormComponent {
   private inputText = '';
   private inputTitle = '';
 
-  public downloadUrl: Observable<string | any>;
+  public downloadUrl: string;
 
   constructor(private afs: AngularFirestore, private afStorage: AngularFireStorage) {
   }
@@ -25,6 +24,7 @@ export class UpdateFormComponent {
     const update: Update = {
       title: this.inputTitle,
       text: this.inputText,
+      images: [this.downloadUrl],
       timestamp: new Date()
     };
     updatesCollection.add(update);
@@ -44,9 +44,8 @@ export class UpdateFormComponent {
     const task = this.afStorage.upload(randomFilePath, event.target.files[0]);
 
 
-    this.downloadUrl = task.downloadURL();
-    // this.ref = this.afStorage.ref(randomId);
-    // console.log(this.ref);
-    // this.task = this.ref.put(event.target.files[0]);
+    task.downloadURL().subscribe((downloadUrl: string) => {
+      this.downloadUrl = downloadUrl;
+    });
   }
 }
