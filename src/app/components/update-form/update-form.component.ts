@@ -14,7 +14,7 @@ export class UpdateFormComponent {
   private inputText = '';
   private inputTitle = '';
 
-  public downloadUrl: string = null;
+  public imageUrls = [];
 
   constructor(private afs: AngularFirestore, private afStorage: AngularFireStorage) {
   }
@@ -24,7 +24,7 @@ export class UpdateFormComponent {
     const update: Update = {
       title: this.inputTitle,
       text: this.inputText,
-      images: [this.downloadUrl],
+      images: this.imageUrls,
       timestamp: new Date()
     };
     updatesCollection.add(update);
@@ -45,7 +45,7 @@ export class UpdateFormComponent {
 
 
     task.downloadURL().subscribe((downloadUrl: string) => {
-      this.downloadUrl = downloadUrl;
+      this.imageUrls.push(downloadUrl);
     });
   }
 }

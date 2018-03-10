@@ -1,4 +1,4 @@
-<img class="update-form__image" [src]="downloadUrl" *ngIf="downloadUrl">
+<img class="update-form__image" [src]="imageUrls[0]" *ngIf="imageUrls && imageUrls.length > 0">
 
 <div class="update-form__header">
   <textarea matInput matTextareaAutosize matAutosizeMinRows="1"
