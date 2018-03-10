@@ -18,6 +18,7 @@ import { LogComponent } from './components/log/log.component';
 import { UpdateFormComponent } from './components/update-form/update-form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFireStorageModule } from 'angularfire2/storage';
+import { AuthComponent } from './components/auth/auth.component';
 
 
 const appRoutes: Routes = [
@@ -32,6 +33,11 @@ const appRoutes: Routes = [
     data: {title: 'New Update'}
   },
   {
+    path: 'auth',
+    component: AuthComponent,
+    data: {title: 'Authorization'}
+  },
+  {
     path: '',
     redirectTo: '/log',
     pathMatch: 'full'
@@ -43,7 +49,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     LogComponent,
-    UpdateFormComponent
+    UpdateFormComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,

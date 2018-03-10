@@ -1,0 +1,25 @@
+@import "../../../styles/imports";
+
+.auth__title {
+  font-size: $font-size-large;
+  font-weight: $font-weight-light;
+  margin-bottom: $spacing-md;
+}
+
+.auth__body {
+  margin-bottom: $spacing-sm;
+}
+
+.auth__password {
+  box-sizing: border-box;
+  background-color: mat-color(map-get($picard-app-theme, primary), 50);
+  border-radius: $radius-md;
+  padding: $spacing-sm;
+  width: 100%;
+}
+
+.auth__login-button {
+  margin-top: $spacing-sm;
+  padding: $spacing-xs;
+  width: 100%;
+}
