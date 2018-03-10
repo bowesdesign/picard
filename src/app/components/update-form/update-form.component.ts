@@ -14,7 +14,7 @@ export class UpdateFormComponent {
   private inputText = '';
   private inputTitle = '';
 
-  public downloadUrl: string;
+  public downloadUrl: string = null;
 
   constructor(private afs: AngularFirestore, private afStorage: AngularFireStorage) {
   }
