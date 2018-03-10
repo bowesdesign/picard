@@ -1,14 +1,29 @@
-import { AppPage } from './app.po';
+import { isInChronologicalOrder, LogPage, UpdateFormPage } from './app.po';
+import { browser } from 'protractor';
 
 describe('picard App', () => {
-  let page: AppPage;
 
   beforeEach(() => {
-    page = new AppPage();
+    browser.waitForAngularEnabled(false);
   });
 
-  it('should display welcome message', () => {
-    page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to app!');
+  afterEach(() => {
+    browser.waitForAngularEnabled(true);
+  });
+
+  it('should add and display updates', () => {
+    const logPage = new LogPage();
+    const updateFormPage = new UpdateFormPage();
+
+    logPage.navigateTo();
+    logPage.createUpdateButton.click();
+    expect(updateFormPage.addUpdateButton.isPresent()).toBeTruthy();
+
+    updateFormPage.enterTitle('Holy shit');
+    updateFormPage.enterText('this app actually works!');
+    updateFormPage.addUpdateButton.click();
+
+    expect(logPage.listOfUpdates.isPresent()).toBeTruthy();
+    expect(logPage.updateList.first().getText()).toContain('this app actually works');
   });
 });
