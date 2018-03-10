@@ -4,12 +4,13 @@
 
 <input class="auth__password"
        type="password"
+       (keyup)="onPasswordKey($event)"
        placeholder="Access code"/>
 
 <button mat-raised-button
         color="accent"
         class="auth__login-button"
-        routerLink="/log">
+        (click)="onLoginClicked()">
   Login
 </button>
 

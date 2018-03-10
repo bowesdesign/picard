@@ -19,6 +19,8 @@ import { UpdateFormComponent } from './components/update-form/update-form.compon
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFireStorageModule } from 'angularfire2/storage';
 import { AuthComponent } from './components/auth/auth.component';
+import { AuthenticationService } from './services/authentication.service';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 
 
 const appRoutes: Routes = [
@@ -60,12 +62,15 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase, 'Picard'),
     AngularFirestoreModule,
+    AngularFireAuthModule,
     AngularFireStorageModule,
     RouterModule.forRoot(
       appRoutes
     )
   ],
-  providers: [],
+  providers: [
+    AuthenticationService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -5,6 +5,7 @@
 
 export const environment = {
   production: false,
+  primaryUser: 'bbowes@pivotal.io',
   firebase: {
     apiKey: 'AIzaSyAqV7jnW4pduBulb4b1sSTEv29WEmw4_yU',
     authDomain: 'testapp-19e6c.firebaseapp.com',
