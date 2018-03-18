@@ -1,4 +1,4 @@
-import { $, $$, browser, by, element, ElementArrayFinder } from 'protractor';
+import { $, $$, browser } from 'protractor';
 
 export class LogPage {
   createUpdateButton = $('.log__create-update-btn');
@@ -12,9 +12,9 @@ export class LogPage {
 
 
 export class UpdateFormPage {
-  addUpdateButton = element(by.css('.update-form__add-update-button'));
-  addUpdateTitle = element(by.css('.update-form__title'));
-  addUpdateText = element(by.css('.update-form__text'));
+  addUpdateButton = $('.update-form__add-update-button');
+  private addUpdateTitle = $('.update-form__title');
+  private addUpdateText = $('.update-form__text');
 
   enterTitle(title: string) {
     this.addUpdateTitle.sendKeys(title);
@@ -22,5 +22,16 @@ export class UpdateFormPage {
 
   enterText(text: string) {
     this.addUpdateText.sendKeys(text);
+  }
+}
+
+export class AuthPage {
+  private passwordInput = $('.auth__password');
+  loginButton = $('.auth__login-button');
+  errorMessage = $('.auth__error');
+
+  enterPassword(password: string) {
+    this.passwordInput.clear();
+    this.passwordInput.sendKeys(password);
   }
 }
