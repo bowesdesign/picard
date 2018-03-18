@@ -8,15 +8,18 @@ import { Router } from '@angular/router';
   styleUrls: ['./auth.component.scss']
 })
 export class AuthComponent {
-  private password: any;
+  private password = '';
+  public errorMessage: string;
 
   constructor(private router: Router, private authenticationService: AuthenticationService) {
   }
 
   onLoginClicked() {
-    this.authenticationService.authenticate(this.password).then(() => {
-      this.router.navigateByUrl('/log');
-    });
+    this.authenticationService.authenticate(this.password).then(
+      () => {this.router.navigateByUrl('/log'); },
+      () => {
+        this.errorMessage = 'Invalid password, access denied!';
+      });
   }
 
   onPasswordKey(event: any) {

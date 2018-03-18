@@ -2,10 +2,12 @@
 
 <div class="auth__body">Please state the access code.</div>
 
-<input class="auth__password"
+<input class="auth__password {{errorMessage ? 'auth__password--error' : ''}}"
        type="password"
        (keyup)="onPasswordKey($event)"
        placeholder="Access code"/>
+
+<div class="auth__error" *ngIf="errorMessage">{{errorMessage}}</div>
 
 <button mat-raised-button
         color="accent"

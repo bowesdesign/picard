@@ -16,6 +16,20 @@
   border-radius: $radius-md;
   padding: $spacing-sm;
   width: 100%;
+
+  &.auth__password--error {
+    border: 1px solid mat-color(map-get($picard-app-theme, warn));
+
+    &:focus {
+      border: 1px solid transparent;
+    }
+  }
+}
+
+.auth__error {
+  padding-top: $spacing-xs;
+  font-size: $font-size-small;
+  color: mat-color(map-get($picard-app-theme, warn));
 }
 
 .auth__login-button {
