@@ -21,18 +21,21 @@ import { AngularFireStorageModule } from 'angularfire2/storage';
 import { AuthComponent } from './components/auth/auth.component';
 import { AuthenticationService } from './services/authentication.service';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AuthGuardService } from './services/auth-guard.service';
 
 
 const appRoutes: Routes = [
   {
     path: 'log',
     component: LogComponent,
-    data: {title: 'Log'}
+    data: {title: 'Log'},
+    canActivate: [AuthGuardService]
   },
   {
     path: 'new-update',
     component: UpdateFormComponent,
-    data: {title: 'New Update'}
+    data: {title: 'New Update'},
+    canActivate: [AuthGuardService]
   },
   {
     path: 'auth',
@@ -69,7 +72,8 @@ const appRoutes: Routes = [
     )
   ],
   providers: [
-    AuthenticationService
+    AuthenticationService,
+    AuthGuardService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { AngularFireAuth } from 'angularfire2/auth';
+import 'rxjs/add/operator/take';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class AuthenticationService {
@@ -11,8 +13,13 @@ export class AuthenticationService {
     return this.afAuth.auth.signInWithEmailAndPassword(environment.primaryUser, password);
   }
 
-  logout(): Promise <any> {
+  logout(): Promise<any> {
     return this.afAuth.auth.signOut();
   }
 
+  getAuthState(): Observable<boolean> {
+    return this.afAuth.authState
+      .take(1)
+      .map(authState => !!authState);
+  }
 }
