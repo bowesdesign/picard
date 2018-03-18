@@ -15,6 +15,8 @@ export class AuthComponent {
   }
 
   onLoginClicked() {
+    this.clearErrorMessage();
+
     this.authenticationService.authenticate(this.password).then(
       () => {this.router.navigateByUrl('/log'); },
       () => {
@@ -24,5 +26,9 @@ export class AuthComponent {
 
   onPasswordKey(event: any) {
     this.password = event.target.value;
+  }
+
+  private clearErrorMessage() {
+    this.errorMessage = '';
   }
 }
