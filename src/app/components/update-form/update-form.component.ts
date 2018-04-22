@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { AngularFireStorage, AngularFireStorageReference } from 'angularfire2/storage';
 import { Update } from '../../models/update';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'update-form',
@@ -18,7 +19,7 @@ export class UpdateFormComponent {
   public uploadInProgress: boolean;
 
 
-  constructor(private afs: AngularFirestore, private afStorage: AngularFireStorage) {
+  constructor(private afs: AngularFirestore, private afStorage: AngularFireStorage, private location: Location) {
   }
 
   onPostClicked() {
@@ -30,6 +31,7 @@ export class UpdateFormComponent {
       timestamp: new Date()
     };
     updatesCollection.add(update);
+    this.location.back();
   }
 
   onTextKey(event: any) {
