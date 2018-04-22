@@ -45,7 +45,7 @@ export class UpdateFormComponent {
   upload(event) {
     const randomId = Math.random().toString(36).substring(2);
     const randomFilePath = '/images/' + randomId;
-    const task = this.afStorage.upload(randomFilePath, event.target.files[0]);
+    const task = this.afStorage.upload(randomFilePath, event.target.files[0], {cacheControl: 'public, max-age=31536000'});
     this.uploadInProgress = true;
 
 
