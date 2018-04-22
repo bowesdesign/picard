@@ -1,5 +1,7 @@
 @import "../../../styles/imports";
 
+$image-min-height: 20rem;
+
 .update-form__text {
   resize: none;
   padding: 0;
@@ -11,26 +13,40 @@
   }
 }
 
-.update-form__header {
-  display: flex;
+.material-icons {
+  margin-top: 1.2rem;
+}
 
-  .update-form__title {
-    margin-right: $spacing-sm;
-    font-size: $font-size-large;
-    font-weight: $font-weight-light;
-    resize: none;
-  }
-
-  .material-icons {
-    margin-top: 1.2rem;
-  }
+.update-form__title {
+  margin-right: $spacing-sm;
+  font-size: $font-size-large;
+  font-weight: $font-weight-light;
+  resize: none;
 }
 
 input[type="file"] {
   display: none;
 }
 
+.update-form__image-upload-box {
+  background-color: mat-color(map-get($picard-app-theme, primary), 50);
+}
+
+
+.update-form__image-upload-box, .update-form__camera {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: $image-min-height;
+}
+
+
 .update-form__image {
   max-width: 100%;
   max-height: auto;
+
+  -webkit-animation: fadein 5s;
+  -moz-animation: fadein 5s;
+  animation: fadein 5s;
 }
