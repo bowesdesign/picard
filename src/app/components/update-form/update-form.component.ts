@@ -24,6 +24,7 @@ export class UpdateFormComponent {
   onPostClicked() {
     const updatesCollection = this.afs.collection<Update>('updates');
     const update: Update = {
+      title: '',
       text: this.inputText,
       images: this.imageUrls,
       timestamp: new Date()
