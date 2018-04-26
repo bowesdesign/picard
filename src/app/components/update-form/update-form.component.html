@@ -25,12 +25,11 @@
   </div>
 
   <div class="update-form__actions--right">
-    <label for="update-form__send-update" class="update-form__send">
+    <button class="update-form__send" (click)="onPostClicked()">
       <i class="material-icons">send</i>
-    </label>
+    </button>
   </div>
 
 </div>
 
 <input id="update-form__image-input" type="file" (change)="upload($event)" accept=".png,.jpg"/>
-<input id="update-form__send-update" type="button" (click)="onPostClicked()">

@@ -13,7 +13,6 @@ export class UpdateFormComponent {
   private task: any;
   private ref: AngularFireStorageReference;
   private inputText = '';
-  private inputTitle = '';
 
   public imageUrls = [];
   public uploadInProgress: boolean;
@@ -25,7 +24,6 @@ export class UpdateFormComponent {
   onPostClicked() {
     const updatesCollection = this.afs.collection<Update>('updates');
     const update: Update = {
-      title: this.inputTitle,
       text: this.inputText,
       images: this.imageUrls,
       timestamp: new Date()
@@ -36,10 +34,6 @@ export class UpdateFormComponent {
 
   onTextKey(event: any) {
     this.inputText = event.target.value;
-  }
-
-  onTitleKey(event: any) {
-    this.inputTitle = event.target.value;
   }
 
   upload(event) {
