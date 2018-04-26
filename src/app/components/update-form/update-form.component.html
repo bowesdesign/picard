@@ -1,14 +1,9 @@
-<div class="update-form__image-upload-box">
-  <label for="update-form__image-input" class="update-form__camera" *ngIf="!uploadInProgress && !imagePresent()">
-    <i class="material-icons">camera_alt</i>
-  </label>
-
+<div class="update-form__image-upload-box" *ngIf="uploadInProgress || imagePresent()">
   <mat-progress-spinner *ngIf="uploadInProgress"
                         color="primary"
                         mode="indeterminate"
                         [strokeWidth]="2"
                         [diameter]="64">
-
   </mat-progress-spinner>
 
   <img class="update-form__image" [src]="imageUrls[0]"
@@ -16,24 +11,26 @@
        *ngIf="imagePresent()">
 </div>
 
-
-<textarea matInput matTextareaAutosize matAutosizeMinRows="1"
-          class="update-form__title"
-          (keyup)="onTitleKey($event)"
-          placeholder="Title"></textarea>
-
-
 <textarea matInput matTextareaAutosize matAutosizeMinRows="6"
           class="update-form__text"
           (keyup)="onTextKey($event)"
           placeholder="What's new?"></textarea>
 
+<div class="update-form__actions">
 
-<button mat-raised-button
-        color="accent"
-        (click)="onPostClicked()"
-        class="update-form__add-update-button">
-  Add Update
-</button>
+  <div class="update-form__actions--left">
+    <label for="update-form__image-input" class="update-form__camera">
+      <i class="material-icons">camera_alt</i>
+    </label>
+  </div>
+
+  <div class="update-form__actions--right">
+    <label for="update-form__send-update" class="update-form__send">
+      <i class="material-icons">send</i>
+    </label>
+  </div>
+
+</div>
 
 <input id="update-form__image-input" type="file" (change)="upload($event)" accept=".png,.jpg"/>
+<input id="update-form__send-update" type="button" (click)="onPostClicked()">

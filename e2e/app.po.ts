@@ -12,8 +12,7 @@ export class LogPage {
 
 
 export class UpdateFormPage {
-  addUpdateButton = $('.update-form__add-update-button');
-  private addUpdateTitle = $('.update-form__title');
+  submitUpdateButton = $('.update-form__send');
   private addUpdateText = $('.update-form__text');
 
   enterTitle(title: string) {

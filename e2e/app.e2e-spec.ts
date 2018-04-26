@@ -30,11 +30,10 @@ describe('picard App', () => {
 
     browser.sleep(5000);
     logPage.createUpdateButton.click();
-    expect(updateFormPage.addUpdateButton.isPresent()).toBeTruthy();
+    expect(updateFormPage.submitUpdateButton.isPresent()).toBeTruthy();
 
-    updateFormPage.enterTitle('Holy shit');
     updateFormPage.enterText('this app actually works!');
-    updateFormPage.addUpdateButton.click();
+    updateFormPage.submitUpdateButton.click();
 
     expect(logPage.listOfUpdates.isPresent()).toBeTruthy();
     expect(logPage.updateList.first().getText()).toContain('this app actually works');
