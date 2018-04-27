@@ -16,3 +16,8 @@ body, #{$all-text-inputs} {
   @include padding($spacing-xs 0);
   @include size(100%, auto)
 }
+
+button {
+  background-color: transparent;
+  border: none;
+}

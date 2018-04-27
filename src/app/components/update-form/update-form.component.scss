@@ -11,10 +11,6 @@ $spacing-footer: 1.2rem;
   }
 }
 
-.material-icons {
-  margin-top: $spacing-footer;
-}
-
 .update-form__title {
   margin-right: $spacing-sm;
   font-size: $font-size-large;
@@ -48,18 +44,16 @@ input[type="file"] {
   border-top: 1px solid mat-color(map-get($picard-app-theme, primary), 100);
   display: flex;
   justify-content: space-between;
-  position: absolute;
-  bottom: 0;
-  left:0;
-  right: 0;
+  @include position(absolute, null 0 0 0);
+  @include padding($spacing-sm $spacing-sm $spacing-footer);
 }
 
 .update-form__camera {
   color: mat-color(map-get($picard-app-theme, primary), 400);
-  margin-left: $spacing-xs;
 }
 
 .update-form__send {
   color: mat-color(map-get($picard-app-theme, accent));
-  margin-right: $spacing-xs;
+  @include margin(-2px 0 0 0);
+  @include padding(0);
 }
