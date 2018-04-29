@@ -4,8 +4,8 @@
   (backClicked)="handleBackClick()">
 </navbar>
 
-<div class="update-form__image-upload-box" *ngIf="uploadInProgress || imagePresent()">
-  <mat-progress-spinner *ngIf="uploadInProgress"
+<div class="update-form__image-upload-box" *ngIf="imageLoading || imagePresent()">
+  <mat-progress-spinner *ngIf="imageLoading"
                         color="primary"
                         mode="indeterminate"
                         [strokeWidth]="2"
@@ -13,7 +13,8 @@
   </mat-progress-spinner>
 
   <img class="update-form__image" [src]="imageUrls[0]"
-       (load)="uploadInProgress=false"
+       [style.display]="imageLoading ? 'none' : ''"
+       (load)="imageLoading=false"
        *ngIf="imagePresent()">
 </div>
 

@@ -39,6 +39,10 @@ input[type="file"] {
   animation: fadein 5s;
 }
 
+mat-progress-spinner {
+  position: absolute;
+}
+
 .update-form__actions {
   border-top: 1px solid mat-color(map-get($picard-app-theme, primary), 100);
   display: flex;

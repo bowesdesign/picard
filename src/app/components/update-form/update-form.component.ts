@@ -15,7 +15,7 @@ export class UpdateFormComponent {
   private inputText = '';
 
   public imageUrls = [];
-  public uploadInProgress: boolean;
+  public imageLoading: boolean;
 
 
   constructor(private afs: AngularFirestore, private afStorage: AngularFireStorage, private location: Location) {
@@ -41,7 +41,7 @@ export class UpdateFormComponent {
     const randomId = Math.random().toString(36).substring(2);
     const randomFilePath = '/images/' + randomId;
     const task = this.afStorage.upload(randomFilePath, event.target.files[0], {cacheControl: 'public, max-age=31536000'});
-    this.uploadInProgress = true;
+    this.imageLoading = true;
 
 
     task.downloadURL().subscribe((downloadUrl: string) => {
