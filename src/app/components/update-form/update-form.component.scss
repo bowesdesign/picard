@@ -1,7 +1,6 @@
 @import "../../../styles/imports";
 
 $image-min-height: 20rem;
-$spacing-footer: 1.2rem;
 
 .update-form__text {
   resize: none;
@@ -45,15 +44,19 @@ input[type="file"] {
   display: flex;
   justify-content: space-between;
   @include position(absolute, null 0 0 0);
-  @include padding($spacing-sm $spacing-sm $spacing-footer);
+  @include padding($spacing-xs $spacing-sm);
 }
 
 .update-form__camera {
   color: mat-color(map-get($picard-app-theme, primary), 400);
+  @include margin(0);
+  @include padding(0);
+  margin-left: -$spacing-xs;
 }
 
 .update-form__send {
   color: mat-color(map-get($picard-app-theme, accent));
-  @include margin(-2px 0 0 0);
+  @include margin(0);
   @include padding(0);
+  margin-right: -$spacing-xs;
 }

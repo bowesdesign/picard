@@ -13,7 +13,7 @@
 
   .navbar__back-arrow {
     color: mat-color(map-get($picard-app-theme, primary), 200);
-    @include margin($spacing-xs 0 0 0);
+    @include margin(0 0 -$spacing-xs 0);
     @include padding(0);
   }
 

@@ -56,4 +56,8 @@ export class UpdateFormComponent {
   handleBackClick() {
     this.location.back();
   }
+
+  openFileUploader() {
+    document.getElementById('update-form__image-input').click();
+  }
 }
