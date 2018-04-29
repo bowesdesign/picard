@@ -1,0 +1,30 @@
+@import "../../../styles/imports";
+
+.navbar {
+  @include position(fixed, 0 0 null 0);
+  @include size(100%, auto);
+  z-index: 2;
+
+  span {
+    font-family: $primary-font;
+    font-weight: $font-weight-light;
+    font-size: $font-size-large;
+  }
+
+  .navbar__back-arrow {
+    color: mat-color(map-get($picard-app-theme, primary), 200);
+    @include margin($spacing-xs 0 0 0);
+    @include padding(0);
+  }
+
+  mat-toolbar {
+    display: flex;
+    justify-content: space-between;
+
+    .navbar__section {
+      margin-top: 0;
+      padding-top: 0;
+      min-width: $spacing-lg;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+<div class="navbar">
+  <mat-toolbar color="primary">
+    <div class="navbar__section">
+      <button class="navbar__back-arrow"
+              *ngIf="showBackBtn"
+              (click)="backClicked.emit()">
+        <i class="material-icons">arrow_back</i>
+      </button>
+    </div>
+    <div class="navbar__section">
+      <span class="navbar__page-title">{{pageTitle}}</span>
+    </div>
+    <div class="navbar__section"></div>
+  </mat-toolbar>
+</div>

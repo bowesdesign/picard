@@ -52,4 +52,8 @@ export class UpdateFormComponent {
   imagePresent() {
     return this.imageUrls && this.imageUrls.length > 0;
   }
+
+  handleBackClick() {
+    this.location.back();
+  }
 }

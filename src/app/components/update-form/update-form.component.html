@@ -1,3 +1,9 @@
+<navbar
+  pageTitle="Update"
+  [showBackBtn]="true"
+  (backClicked)="handleBackClick($event)">
+</navbar>
+
 <div class="update-form__image-upload-box" *ngIf="uploadInProgress || imagePresent()">
   <mat-progress-spinner *ngIf="uploadInProgress"
                         color="primary"
