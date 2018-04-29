@@ -34,9 +34,9 @@ input[type="file"] {
   max-height: auto;
   margin-bottom: $spacing-sm;
 
-  -webkit-animation: fadein 5s;
-  -moz-animation: fadein 5s;
-  animation: fadein 5s;
+  -webkit-animation: fadein 1s;
+  -moz-animation: fadein 1s;
+  animation: fadein 1s;
 }
 
 mat-progress-spinner {
