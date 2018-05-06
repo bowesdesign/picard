@@ -5,6 +5,7 @@ $image-min-height: 20rem;
 .update-form__text {
   resize: none;
   padding: 0;
+  margin-bottom: $spacing-lg;
   &:hover, &:focus, &:active, &:visited {
     outline: none;
   }
@@ -44,10 +45,11 @@ mat-progress-spinner {
 }
 
 .update-form__actions {
+  background: $white;
   border-top: 1px solid mat-color(map-get($picard-app-theme, primary), 100);
   display: flex;
   justify-content: space-between;
-  @include position(absolute, null 0 0 0);
+  @include position(fixed, null 0 0 0);
   @include padding($spacing-xs $spacing-sm);
 }
 
