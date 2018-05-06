@@ -19,3 +19,11 @@
     {{update.timestamp | date:"dd MMM yyyy" | uppercase}}
   </div>
 </div>
+<div *ngIf="moreUpdatesAvailable" class="log__load-more">
+  <button mat-button
+          color="accent"
+          class="log__load-more-btn"
+          (click)="getUpdates()">
+    Load More
+  </button>
+</div>

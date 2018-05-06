@@ -8,19 +8,37 @@ import { AngularFirestore } from 'angularfire2/firestore';
   styleUrls: ['./log.component.scss']
 })
 export class LogComponent {
-  updates: Update[];
+  db: AngularFirestore;
+  updates: Update[] = [];
+  moreUpdatesAvailable = true;
 
   constructor(db: AngularFirestore) {
-    db.collection('updates')
+    this.db = db;
+    this.getUpdates();
+  }
+
+  getUpdates() {
+    const lastUpdate = this.updates[this.updates.length - 1];
+
+    this.db.collection('updates', this.updateQuery(lastUpdate))
       .valueChanges()
       .subscribe((updateList: Update[]) => {
-        this.updates = this.sortByTimestamp(updateList);
+        if (updateList.length === 0) {
+          this.moreUpdatesAvailable = false;
+        } else {
+          this.updates = this.updates.concat(updateList);
+        }
       });
   }
 
-  sortByTimestamp(updates: Update[]) {
-    const sortedUpdates = updates || [];
-    sortedUpdates.sort((a, b) => a.timestamp - b.timestamp).reverse();
-    return sortedUpdates;
+  private updateQuery(lastUpdate: Update) {
+    if (lastUpdate) {
+      return ref => ref.orderBy('timestamp', 'desc')
+        .startAfter(lastUpdate.timestamp)
+        .limit(10);
+    } else {
+      return ref => ref.orderBy('timestamp', 'desc')
+        .limit(10);
+    }
   }
 }

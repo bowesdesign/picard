@@ -37,3 +37,9 @@
 .update__item + .update__item {
   margin-top: $spacing-lg;
 }
+
+.log__load-more {
+  padding: $spacing-sm;
+  display: flex;
+  justify-content: center;
+}
