@@ -4,24 +4,29 @@
   (backClicked)="handleBackClick()">
 </navbar>
 
-<div class="update-form__image-upload-box" *ngIf="imageLoading || imagePresent()">
-  <mat-progress-spinner *ngIf="imageLoading"
-                        color="primary"
-                        mode="indeterminate"
-                        [strokeWidth]="2"
-                        [diameter]="64">
-  </mat-progress-spinner>
+<div class="update-form__scrollable-area">
+  <div class="update-form__content">
 
-  <img class="update-form__image" [src]="imageUrls[0]"
-       [style.display]="imageLoading ? 'none' : ''"
-       (load)="imageLoading=false"
-       *ngIf="imagePresent()">
+    <div class="update-form__image-upload-box" *ngIf="imageLoading || imagePresent()">
+      <mat-progress-spinner *ngIf="imageLoading"
+                            color="primary"
+                            mode="indeterminate"
+                            [strokeWidth]="2"
+                            [diameter]="64">
+      </mat-progress-spinner>
+
+      <img class="update-form__image" [src]="imageUrls[0]"
+           [style.display]="imageLoading ? 'none' : ''"
+           (load)="imageLoading=false"
+           *ngIf="imagePresent()">
+    </div>
+
+    <textarea matInput matTextareaAutosize matAutosizeMinRows="2"
+              class="update-form__text"
+              (keyup)="onTextKey($event)"
+              placeholder="What's new?"></textarea>
+  </div>
 </div>
-
-<textarea matInput matTextareaAutosize matAutosizeMinRows="2"
-          class="update-form__text"
-          (keyup)="onTextKey($event)"
-          placeholder="What's new?"></textarea>
 
 <div class="update-form__actions">
 
@@ -29,7 +34,7 @@
     <button mat-icon-button
             class="update-form__camera"
             (click)="openFileUploader()">
-        <i class="material-icons">camera_alt</i>
+      <i class="material-icons">camera_alt</i>
     </button>
   </div>
 

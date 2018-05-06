@@ -1,47 +1,52 @@
 @import "../../../styles/imports";
 
 $image-min-height: 20rem;
+$toolbar-height: 5.6rem;
 
-.update-form__text {
-  resize: none;
-  padding: 0;
-  margin-bottom: $spacing-lg;
-  &:hover, &:focus, &:active, &:visited {
-    outline: none;
+.update-form__scrollable-area {
+  @include position(fixed, 0);
+  top: $toolbar-height;
+  bottom: $toolbar-height;
+  overflow: scroll;
+
+  .update-form__content {
+    @include padding($spacing-sm);
+
+    mat-progress-spinner {
+      position: absolute;
+    }
+
+    .update-form__image-upload-box {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: $image-min-height;
+    }
+
+    .update-form__image {
+      max-width: 100%;
+      max-height: auto;
+      margin-bottom: $spacing-sm;
+
+      -webkit-animation: fadein 1s;
+      -moz-animation: fadein 1s;
+      animation: fadein 1s;
+    }
+
+    .update-form__text {
+      resize: none;
+      padding: 0;
+      &:hover, &:focus, &:active, &:visited {
+        outline: none;
+      }
+    }
+
   }
-}
-
-.update-form__title {
-  margin-right: $spacing-sm;
-  font-size: $font-size-large;
-  font-weight: $font-weight-light;
-  resize: none;
 }
 
 input[type="file"] {
   display: none;
-}
-
-.update-form__image-upload-box {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: $image-min-height;
-}
-
-.update-form__image {
-  max-width: 100%;
-  max-height: auto;
-  margin-bottom: $spacing-sm;
-
-  -webkit-animation: fadein 1s;
-  -moz-animation: fadein 1s;
-  animation: fadein 1s;
-}
-
-mat-progress-spinner {
-  position: absolute;
 }
 
 .update-form__actions {
@@ -51,18 +56,18 @@ mat-progress-spinner {
   justify-content: space-between;
   @include position(fixed, null 0 0 0);
   @include padding($spacing-xs $spacing-sm);
-}
 
-.update-form__camera {
-  color: mat-color(map-get($picard-app-theme, primary), 400);
-  @include margin(0);
-  @include padding(0);
-  margin-left: -$spacing-xs;
-}
+  .update-form__camera {
+    color: mat-color(map-get($picard-app-theme, primary), 400);
+    @include margin(0);
+    @include padding(0);
+    margin-left: -$spacing-xs;
+  }
 
-.update-form__send {
-  color: mat-color(map-get($picard-app-theme, accent));
-  @include margin(0);
-  @include padding(0);
-  margin-right: -$spacing-xs;
+  .update-form__send {
+    color: mat-color(map-get($picard-app-theme, accent));
+    @include margin(0);
+    @include padding(0);
+    margin-right: -$spacing-xs;
+  }
 }
